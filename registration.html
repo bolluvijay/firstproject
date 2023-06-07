@@ -1,0 +1,173 @@
+<html>
+<head>
+<title></title>
+<link href='external.css' rel='StyleSheet'/>
+<script type='text/javascript'>
+function validate()
+{
+var fname=document.getElementById("fn").value;
+var uname=document.getElementById("un").value;
+if(fname=="")
+{
+document.getElementById("errormsg").innerHTML="<b style='color:red'>Please Enter First Name</b>";
+return false;
+}
+if(uname=="")
+{
+document.getElementById("errormsg").innerHTML="<b style='color:red'>Please Enter User Name</b>";
+return false;
+}
+var pwd=document.getElementById("pwd").value;
+if(pwd=="")
+{
+alert("Please enter password");
+return false;
+}
+var cpwd=document.getElementById("cpwd").value;
+if(cpwd=="")
+{
+alert("Please enter confirm password");
+return false;
+}
+if(cpwd!=pwd)
+{
+alert("Password and confirm password are not equal");
+return false;
+}
+var g1=document.getElementsByName("gender");
+var g="";
+for(var i=0;i<g1.length;i++){
+if(g1[i].checked==true){
+g=g1[i].value;
+break;
+}
+}
+if(g==""){
+alert("Please select gender");
+return false;
+}
+var b=document.getElementById('branch').value;
+if(b=="Select"){
+alert("Please select Branch");
+return false;
+}
+var h1=document.getElementsByName("hobbies");
+var h="";
+var i=0;
+for(i=0;i<h1.length;i++){
+if(h1[i].checked==true){
+	if(h=="")
+	h=h1[i].value;
+	else
+   h=h+","+h1[i].value;
+}
+}
+if(h==""){
+alert("Please select atleast one hobbie");
+return false;
+}
+var add=document.getElementById("address").value;
+if(add=="")
+{
+alert("Please enter address");
+return false;
+}
+
+
+return true;
+}
+</script>
+</head>
+<body>
+<form id='f1'>
+<table border='2' align='center' style='background-color:yellow'>
+<tr>
+<td id='errormsg' colspan='2'>
+
+</td>
+</tr>
+
+<tr>
+<td colspan='2'>
+<marquee direction='right'>
+<img src='projecticon.jpeg' width='50px' height='50px'/>
+</marquee>
+</td>
+</tr>
+<tr>
+<td colspan="2" align='center'>Registration Page</td>
+</tr>
+<tr>
+<td class='mystyle'>First Name</td>
+<td>
+<input type='text' id='fn' name='fn'/>
+</td>
+</tr>
+<tr>
+<td class='mystyle'>User Name</td>
+<td>
+<input type='text' id='un' name='un'/>
+</td>
+</tr>
+<tr>
+<td class='mystyle'>Password</td>
+<td>
+<input type='password' id='pwd' name='pwd'/>
+</td>
+</tr>
+<tr>
+<td class='mystyle'>Confirm Password</td>
+<td>
+<input type='password' id='cpwd' name='cpwd'/>
+</td>
+</tr>
+<tr>
+<td class='mystyle'>Gender</td>
+<td>
+<input type='radio' id='male' value="male" name='gender'/>Male
+<input type='radio' id='female' value="female" name='gender'/>Female
+</td>
+</tr>
+<tr>
+<td class='mystyle'>Branch</td>
+<td>
+<select id='branch' name='branch'>
+<option>Select</option>
+<option>CSE</option>
+<option>IT</option>
+<option>ECE</option>
+<option>EEE</option>
+<option>Others</option>
+</select>
+</td>
+</tr>
+<tr>
+<td class='mystyle'>Hobbies</td>
+<td>
+<input type='checkbox' value='reading' id='reading' name='hobbies'/>Reading<br/>
+<input type='checkbox' value='sleeping'id='sleeping' name='hobbies'/>Sleeping<br/>
+<input type='checkbox' value='hobbies' id='hobbies' name='hobbies'/>Eating
+</td>
+</tr>
+<tr>
+<td class='mystyle'>Address</td>
+<td>
+<textarea id='address' name='address' cols='20' rows="5" >
+</textarea>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type='submit' onclick='return validate()' id='b1' name='b1' value='Submit'/>
+</td>
+<td>
+<input type='button' id='b2' name='b2' value='clear'/>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
