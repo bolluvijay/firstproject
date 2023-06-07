@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <head>
 <title></title>
@@ -50,3 +51,57 @@ return true;
 </html>
 
 
+=======
+<html>
+<head>
+<title></title>
+<link href='external.css' rel='StyleSheet'/>
+<script type="text/javascript">
+function validate()
+{
+var x=document.getElementById('un').value;
+var y=document.getElementById('pwd').value;
+
+if(x==""){
+alert("Please enter user name");
+return false;
+}
+if(y==""){
+alert("Please enter password");
+return false;
+}
+return true;
+}
+</script>
+
+</head>
+<body>
+<form id='f1'>
+<table border='2' align='center'>
+<tr>
+<td class='mystyle'>User Name</td>
+<td>
+<input type='text' id='un' name='un'/>
+</td>
+</tr>
+<tr>
+<td class='mystyle'>Password</td>
+<td>
+<input type='password' id='pwd' name='pwd'/>
+</td>
+</tr>
+<tr>
+<td>
+<input type='submit' onclick='return validate()'  id='b1' name='b1' value='Login'/>
+</td>
+<td>
+<input type='button' id='btnclear' name='btnclear' value='clear'/>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+>>>>>>> origin/firstbranch
